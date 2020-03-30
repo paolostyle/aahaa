@@ -1,0 +1,14 @@
+{
+  "name": "afk-heroes-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fs-extra": "^9.0.0",
+    "jsdom": "^16.2.1"
+  },
+  "scripts": {
+    "fetch": "node scripts/fetchHeroData.js"
+  }
+}
