@@ -11,6 +11,7 @@ pylint = "*"
 numpy = "*"
 opencv-python = "*"
 pytesseract = "*"
+scikit-image = "*"
 
 [requires]
 python_version = "3.8"
