@@ -5,7 +5,7 @@ from . import consts
 from pathlib import Path
 
 
-def clear_debug():
+def clear_debug_dir():
     files = glob(str(consts.DEBUG_DIR / "*"))
     for f in files:
         os.remove(f)
