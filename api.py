@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from image_recognition import recognize_heroes, enums
+from hero_fetching import get_resources
 from pydantic import BaseModel, Field
 from typing import List
 
@@ -24,12 +25,12 @@ class HeroRecognitionConfig(BaseModel):
     class_name: enums.HeroClass = Field(
         None,
         description="Class of champions to search for. By default includes all classes.",
-        alias="class"
+        alias="class",
     )
     include_common: bool = Field(
         False,
         description="Indicates whether it should include common heroes.",
-        alias="includeCommon"
+        alias="includeCommon",
     )
 
 
@@ -62,5 +63,13 @@ async def hero_recognition(configs: List[HeroRecognitionConfig]):
         )
 
     return response
+
+
+@app.post(
+    "/api/v1/update_resources", tags=["hero-recognition"],
+)
+async def update_resources():
+    get_resources()
+
 
 # uvicorn api:app --reload

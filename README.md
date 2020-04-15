@@ -8,8 +8,8 @@
 - make a HeroAscension class which contains methods for
   getting colors, weights, levels with plus etc.
 - clean up hero_recognition.py
-- rewrite scraping script to Python
 - try other Tesseract models/try to train one
+- write tests
 
 ### API
 - file upload, consider direct upload to Azure Blob Storage?

@@ -14,6 +14,8 @@ pytesseract = "*"
 scikit-image = "*"
 fastapi = "*"
 uvicorn = "*"
+requests = "*"
+bs4 = "*"
 
 [requires]
 python_version = "3.8"

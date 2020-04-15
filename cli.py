@@ -1,6 +1,7 @@
 import argparse
 import json
 from image_recognition import recognize_heroes, HeroFaction, HeroClass
+from hero_fetching import get_resources
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AFK Arena heroes recognition")
@@ -22,8 +23,19 @@ if __name__ == "__main__":
         dest="include_common",
         action="store_true",
     )
+    parser.add_argument(
+        "--update-resources",
+        help="update resources",
+        dest="update_resources",
+        action="store_true",
+    )
     args = parser.parse_args()
 
+    if args.update_resources:
+        print('Updating resources...')
+        get_resources()
+
+    print('Recognizing heroes...')
     data = recognize_heroes(
         args.img, args.faction, args.class_name, args.include_common
     )
