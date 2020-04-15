@@ -1,12 +1,12 @@
 import cv2
 from glob import glob
 import os
-from . import consts
 from pathlib import Path
+from . import config
 
 
 def clear_debug_dir():
-    files = glob(str(consts.DEBUG_DIR / "*"))
+    files = glob(str(config.DEBUG_DIR / "*"))
     for f in files:
         os.remove(f)
 
@@ -16,11 +16,11 @@ def draw_rect(base_image, pt, icon_w, icon_h):
 
 
 def save_img(name, pt, suffix, img):
-    cv2.imwrite(str(consts.DEBUG_DIR / f"{name}_{pt[0]}_{pt[1]}___{suffix}.png"), img)
+    cv2.imwrite(str(config.DEBUG_DIR / f"{name}_{pt[0]}_{pt[1]}___{suffix}.png"), img)
 
 
 def save_result(image):
-    cv2.imwrite(str(consts.DEBUG_DIR / "result.png"), image)
+    cv2.imwrite(str(config.DEBUG_DIR / "result.png"), image)
 
 
 def show_img(image):
