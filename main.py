@@ -72,4 +72,4 @@ async def update_resources():
     get_resources()
 
 
-# uvicorn api:app --reload
+# uvicorn main:app --reload

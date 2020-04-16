@@ -1,0 +1,8 @@
+__pycache__
+.vscode
+debug
+screens
+.editorconfig
+.gitignore
+cli.py
+README.md
