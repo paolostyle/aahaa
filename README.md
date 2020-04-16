@@ -16,8 +16,8 @@
 
 ### Frontend
 - yeah... everything
+- decide whether to use same repo (prob not)
 
 ### Azure
-- prepare Dockerfile
 - sign up on Azure
 - everything else
