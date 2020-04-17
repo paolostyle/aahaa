@@ -40,7 +40,7 @@ class HeroRecognitionResponse(BaseModel):
     class_name: enums.HeroClass = Field(..., alias="class")
     rarity: enums.HeroRarity
     ascension: enums.HeroAscension
-    ascension_level: int = Field(None, alias="ascensionLevel")
+    stars: int = None
     level: int = None
 
 
