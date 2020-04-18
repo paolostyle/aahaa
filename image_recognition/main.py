@@ -1,8 +1,9 @@
 import json
+
 from . import config
 from .base_image import BaseImage
-from .hero import Hero
 from .enums import HeroAscension
+from .hero import Hero
 
 
 def load_hero_data(faction=None, class_name=None, include_common=None):

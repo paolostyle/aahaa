@@ -1,7 +1,8 @@
 import argparse
 import json
-from image_recognition import recognize_heroes, HeroFaction, HeroClass
+
 from hero_fetching import get_resources
+from image_recognition import HeroClass, HeroFaction, recognize_heroes
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AFK Arena heroes recognition")

@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from skimage.color import deltaE_cie76, rgb2lab
 
+
 def get_dominant_color(image):
     average = image.mean(axis=0).mean(axis=0)
 

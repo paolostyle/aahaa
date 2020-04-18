@@ -1,7 +1,9 @@
-import cv2
-from glob import glob
 import os
+from glob import glob
 from pathlib import Path
+
+import cv2
+
 from . import config
 
 
@@ -15,8 +17,8 @@ def draw_rect(base_image, pt, icon_w, icon_h):
     cv2.rectangle(base_image, pt, (pt[0] + icon_w, pt[1] + icon_h), (0, 0, 255), 3)
 
 
-def save_img(name, pt, suffix, img):
-    cv2.imwrite(str(config.DEBUG_DIR / f"{name}_{pt[0]}_{pt[1]}___{suffix}.png"), img)
+def save_img(name, details, img):
+    cv2.imwrite(str(config.DEBUG_DIR / f"{name}_{details}.png"), img)
 
 
 def save_result(image):

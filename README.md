@@ -3,8 +3,7 @@
 ## TODOs
 
 ### image_recognition module:
-- try other Tesseract models/try to train one
-- general level detection improvements
+- further level detection improvements
 - write tests
 
 ### API

@@ -1,9 +1,11 @@
+from typing import List
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from image_recognition import recognize_heroes, enums
-from hero_fetching import get_resources
 from pydantic import BaseModel, Field
-from typing import List
+
+from hero_fetching import get_resources
+from image_recognition import enums, recognize_heroes
 
 app = FastAPI(title="AFK Arena Hero Recognition API", redoc_url=None)
 
@@ -71,5 +73,3 @@ async def hero_recognition(configs: List[HeroRecognitionConfig]):
 async def update_resources():
     get_resources()
 
-
-# uvicorn main:app --reload

@@ -1,6 +1,8 @@
-import cv2
 import math
+
+import cv2
 import numpy as np
+
 from . import config
 from .hero import Hero, HeroIconSections
 

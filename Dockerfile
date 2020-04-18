@@ -12,6 +12,7 @@ RUN pip install gunicorn
 COPY . /app
 
 VOLUME /app/screens
+VOLUME /app/debug
 
 EXPOSE 8080
 CMD ["gunicorn", "main:app", "-w", "4", "-b", "0.0.0.0:8080", "-k", "uvicorn.workers.UvicornWorker"]
