@@ -2,7 +2,7 @@ import json
 
 from . import config
 from .base_image import BaseImage
-from .enums import HeroAscension
+from .enums import HeroAscension, Mode
 from .hero import Hero
 
 
@@ -28,13 +28,15 @@ def load_hero_data(faction=None, class_name=None, include_common=None):
     return filtered_heroes
 
 
-def recognize_heroes(filename, faction=None, class_name=None, include_common=None):
+def recognize_heroes(
+    filename, faction=None, class_name=None, include_common=None, mode=Mode.HEROES_PAGE
+):
     heroes = load_hero_data(faction, class_name, include_common)
     base_image = BaseImage(filename)
     matches = []
 
     for hero_data in heroes:
-        hero = Hero(hero_data)
+        hero = Hero(hero_data, mode)
         base_image.find_hero_copies(hero)
         matches.extend(hero.matches)
 

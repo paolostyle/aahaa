@@ -34,6 +34,10 @@ class HeroRecognitionConfig(BaseModel):
         description="Indicates whether it should include common heroes.",
         alias="includeCommon",
     )
+    mode: enums.Mode = Field(
+        enums.Mode.HEROES_PAGE,
+        description="Mode, set depending on type of screen."
+    )
 
 
 class HeroRecognitionResponse(BaseModel):
@@ -61,6 +65,7 @@ async def hero_recognition(configs: List[HeroRecognitionConfig]):
                 config.faction,
                 config.class_name,
                 config.include_common,
+                config.mode
             )
         )
 

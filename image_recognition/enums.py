@@ -40,3 +40,8 @@ class HeroRarity(AutoNameEnum):
     COMMON = auto()
     LEGENDARY_PLUS = auto()
     ASCENDED = auto()
+
+
+class Mode(str, Enum):
+    HEROES_PAGE = "heroes_page"
+    CHALLENGER_LINEUP = "challenger_lineup"

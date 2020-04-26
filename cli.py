@@ -2,7 +2,7 @@ import argparse
 import json
 
 from hero_fetching import get_resources
-from image_recognition import HeroClass, HeroFaction, recognize_heroes
+from image_recognition import HeroClass, HeroFaction, Mode, recognize_heroes
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AFK Arena heroes recognition")
@@ -25,6 +25,12 @@ if __name__ == "__main__":
         action="store_true",
     )
     parser.add_argument(
+        "--mode",
+        help="screen type mode",
+        dest="mode",
+        choices=[mode.value for mode in Mode],
+    )
+    parser.add_argument(
         "--update-resources",
         help="update resources",
         dest="update_resources",
@@ -38,6 +44,6 @@ if __name__ == "__main__":
 
     print('Recognizing heroes...')
     data = recognize_heroes(
-        args.img, args.faction, args.class_name, args.include_common
+        args.img, args.faction, args.class_name, args.include_common, args.mode
     )
     print(json.dumps(data))
