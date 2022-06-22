@@ -6,7 +6,7 @@ authors = ["Pawel Dabrowski <dabrowskip9@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-numpy = "^1.18.2"
+numpy = "^1.22.0"
 opencv-python = "^4.2.0"
 pytesseract = "^0.3.3"
 scikit-image = "^0.16.2"
